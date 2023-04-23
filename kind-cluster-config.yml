@@ -1,0 +1,21 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  ipFamily: ipv6
+nodes:
+- role: control-plane
+  extraMounts:
+  - hostPath: /home/worlako/kind-cluster-storage
+    containerPath: /files
+  # port forward 80 on the host to 80 on this node
+  extraPortMappings:
+  - containerPort: 30950
+    hostPort: 8099
+    protocol: TCP
+- role: worker
+- role: worker
+- role: worker
+
+# CLI COMMAND to create cluster
+# kind create cluster --config kind-cluster-config.yml
+# kubectl cluster-info --context kind-kind
