@@ -1,0 +1,4 @@
+# CLI COMMAND to create cluster
+kind create cluster --config kind-cluster-config.yml
+kubectl cluster-info --context kind-kind
+kind delete clusters --all

@@ -16,6 +16,3 @@ nodes:
 - role: worker
 - role: worker
 
-# CLI COMMAND to create cluster
-# kind create cluster --config kind-cluster-config.yml
-# kubectl cluster-info --context kind-kind
